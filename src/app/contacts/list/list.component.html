@@ -1,1 +1,14 @@
-<p>list works!</p>
+<h1>Contacts</h1>
+<!-- if we have contacts -->
+<div *ngIf="contacts.length > 0">
+  <div *ngFor="let contact of contacts">
+    <div class="contact-container">
+      <div class="contact">
+        <span>{{ contact.firstName }} {{ contact.lastName }}</span>
+        <a>View</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- if we don't have contacts -->
+<div *ngIf="contacts.length === 0">No contacts yet</div>

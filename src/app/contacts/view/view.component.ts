@@ -2,11 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-view',
-  standalone: true,
-  imports: [],
+  standalone: false,
   templateUrl: './view.component.html',
-  styleUrl: './view.component.css'
+  styleUrl: './view.component.css',
 })
-export class ViewComponent {
-
-}
+export class ViewComponent {}
