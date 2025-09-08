@@ -8,7 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [ListComponent, AddComponent, ViewComponent],
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule],
   exports: [AddComponent, ListComponent, ViewComponent],
 })
 export class ContactsModule {}

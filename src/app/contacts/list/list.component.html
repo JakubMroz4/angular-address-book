@@ -5,7 +5,9 @@
     <div class="contact-container">
       <div class="contact">
         <span>{{ contact.firstName }} {{ contact.lastName }}</span>
-        <a>View</a>
+        <a routerLink="/contacts/{{ contact.id }}" class="btn btn-primary">
+          View
+        </a>
       </div>
     </div>
   </div>
