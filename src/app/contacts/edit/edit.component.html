@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="contact; else loading">
   <h2>Edit Contact</h2>
   <form
     [formGroup]="contactForm"
@@ -54,3 +54,9 @@
     </button>
   </form>
 </div>
+
+<ng-template #loading>
+  <ng-container>
+    <h1>Contact not found</h1>
+  </ng-container>
+</ng-template>

@@ -13,6 +13,7 @@ import { Contact } from '../../models/contact';
 export class EditComponent implements OnInit {
   contactForm: FormGroup;
   contactId!: number;
+  contact: Contact | null = null;
 
   constructor(
     private readonly fb: FormBuilder,
@@ -30,16 +31,16 @@ export class EditComponent implements OnInit {
 
   ngOnInit(): void {
     this.contactId = Number(this.route.snapshot.paramMap.get('id'));
-    const contact = this.contactService.contacts.find(
-      (c) => c.id === this.contactId
-    );
+    this.contactService.GetContactById(this.contactId).subscribe((data) => {
+      this.contact = data!;
+    });
 
-    if (contact) {
+    if (this.contact) {
       this.contactForm.patchValue({
-        firstName: contact.firstName,
-        lastName: contact.lastName,
-        street: contact.street,
-        city: contact.city,
+        firstName: this.contact.firstName,
+        lastName: this.contact.lastName,
+        street: this.contact.street,
+        city: this.contact.city,
       });
     }
   }
