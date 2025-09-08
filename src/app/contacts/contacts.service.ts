@@ -10,7 +10,13 @@ export class ContactsService {
   public contacts: Contact[] = CONTACTS;
 
   public AddContact(contact: Contact): void {
-    this.contacts.push(contact);
+    const maxId =
+      this.contacts.length > 0
+        ? Math.max(...this.contacts.map((c) => c.id))
+        : 0;
+
+    const newContact = { ...contact, id: maxId + 1 };
+    this.contacts.push(newContact);
   }
   GetContactById(id: number): Observable<Contact | undefined> {
     const contact = this.contacts.find((b) => b.id === id);

@@ -2,14 +2,14 @@ import { Contact } from '../models/contact';
 
 export const CONTACTS: Contact[] = [
   {
-    id: 1,
+    id: 0,
     firstName: 'Florian',
     lastName: 'Berg',
     street: 'Pavington 5',
     city: 'Chelsea',
   },
   {
-    id: 2,
+    id: 1,
     firstName: 'Adam',
     lastName: 'Mayer',
     street: 'Langgata 12',
