@@ -1,0 +1,25 @@
+:host {
+  display: flex;
+  box-sizing: border-box;
+  width: 40vw;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.5em;
+}
+
+label {
+  font-weight: bold;
+}
+
+.actions {
+  display: flex;
+}
+
+.spacer {
+  flex: 1;
+}
