@@ -19,7 +19,13 @@ export class ContactsService {
     this.contacts.push(newContact);
   }
   GetContactById(id: number): Observable<Contact | undefined> {
-    const contact = this.contacts.find((b) => b.id === id);
+    const contact = this.contacts.find((c) => c.id === id);
     return of(contact);
+  }
+  public UpdateContact(updatedContact: Contact): void {
+    const index = this.contacts.findIndex((c) => c.id === updatedContact.id);
+    if (index !== -1) {
+      this.contacts[index] = updatedContact;
+    }
   }
 }
